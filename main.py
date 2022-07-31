@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import latlong
+import cartimetown
 
 for page in range(89, 85, -1):
     url = 'https://www.bien-dans-ma-ville.fr/classement-ville-densite-normandie/?page=' + str(page)
@@ -9,3 +11,4 @@ for page in range(89, 85, -1):
         town_name = town.a.string
         town_length = len(town_name)
         print(town_name[0:town_length-5])
+        print(str(latlong.latlong(town_name[0:town_length-5])))
