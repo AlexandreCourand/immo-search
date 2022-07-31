@@ -7,5 +7,10 @@ def latlong(town):
 
     location = geolocator.geocode(town)
 
-    print("The latitude of the location is: ", location.latitude)
-    print("The longitude of the location is: ", location.longitude)
+    #print("The latitude of the location is: ", location.latitude)
+    #print("The longitude of the location is: ", location.longitude)
+    
+    return {
+        "long" : location.longitude,
+        "lat" : location.latitude
+    }
